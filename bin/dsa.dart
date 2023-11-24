@@ -1,9 +1,23 @@
-import 'package:dsa/binary_search.dart' as dsa;
+import 'package:dsa/two_crystal_balls.dart' as dsa;
 
 void main(List<String> arguments) {
-  final List<int> numbers = [1, 14, 16, 23, 32, 45, 58, 60];
+  final List<bool> breakpoints = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ];
 
-  final result = dsa.binarySearch(haystack: numbers, needle: 60);
+  final result = dsa.twoCrystalBalls(breaks: breakpoints);
 
-  print(result ? 'Found' : 'Not Found');
+  print('It starts to break on floor: $result');
 }
