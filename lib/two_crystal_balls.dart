@@ -5,8 +5,6 @@ num twoCrystalBalls({required List<bool> breaks}) {
 
   int i = jumpAmount;
 
-  print('jump amount is: $i');
-
   for (; i < breaks.length; i += jumpAmount) {
     if (breaks[i]) {
       break;
@@ -15,7 +13,7 @@ num twoCrystalBalls({required List<bool> breaks}) {
 
   i -= jumpAmount;
 
-  for (int j = i; j < i + jumpAmount && j < breaks.length; j++, i++) {
+  for (int j = 0; j <= jumpAmount && i < breaks.length; j++, i++) {
     if (breaks[i]) {
       return i;
     }
