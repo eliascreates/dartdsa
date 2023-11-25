@@ -1,17 +1,23 @@
-import 'package:dsa/queue.dart' as dsa;
+import 'package:dsa/stack.dart' as dsa;
 
 void main(List<String> arguments) {
-  var queue = dsa.Queue<String>();
+  final stack = dsa.Stack<int>();
 
-  queue.enqueue(item: 'I');
-  queue.enqueue(item: 'Learned');
-  queue.enqueue(item: 'Queues');
+  stack.push(item:1);
+  stack.push(item:2);
+  stack.push(item:3);
 
-  print('Queue: $queue');
-  print('Dequeue: ${queue.dequeue()}');
-  print('Queue after dequeue: $queue');
-  print('Peek: ${queue.peek()}');
+  print('Stack       : $stack');
+  print('Pop         : ${stack.pop()}');
+  print('After pop   : $stack');
+  
+  print('\n');
 
-  print('Is empty: ${queue.length == 0}');
-  print('Queue length: ${queue.length}');
+  print('Peek        : ${stack.peek()}');
+  print('Pop         : ${stack.pop()}');
+  print('Pop         : ${stack.pop()}');
+  print('After pop   : $stack');
+
+  print('Is empty    : ${stack.length == 0}');
+  print('Stack length: ${stack.length}');
 }

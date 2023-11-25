@@ -61,7 +61,7 @@ void main() {
         final result = queue.peek();
 
         //Assert
-        expect(result, null);
+        expect(result, isNull);
       });
     });
 
