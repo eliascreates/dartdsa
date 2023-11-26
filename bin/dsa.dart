@@ -1,23 +1,27 @@
-import 'package:dsa/stack.dart' as dsa;
+import 'dart:math';
+import 'package:dsa/maze_solver.dart' as dsa;
 
-void main(List<String> arguments) {
-  final stack = dsa.Stack<int>();
+void main() {
+  // Define the maze
+  List<String> maze = [
+    '##########',
+    '         #',
+    '#   ##   #',
+    '#   ##   #',
+    '#         ',
+    '##########',
+  ];
 
-  stack.push(item:1);
-  stack.push(item:2);
-  stack.push(item:3);
+  Point<int> start = Point(0, 1);
+  Point<int> end = Point(9, 4);
 
-  print('Stack       : $stack');
-  print('Pop         : ${stack.pop()}');
-  print('After pop   : $stack');
-  
-  print('\n');
+  String wall = '#';
 
-  print('Peek        : ${stack.peek()}');
-  print('Pop         : ${stack.pop()}');
-  print('Pop         : ${stack.pop()}');
-  print('After pop   : $stack');
-
-  print('Is empty    : ${stack.length == 0}');
-  print('Stack length: ${stack.length}');
+  List<Point<int>> solutionPath = dsa.solveMaze(
+    maze: maze,
+    wall: wall,
+    start: start,
+    end: end,
+  );
+  print(solutionPath);
 }
