@@ -14,7 +14,7 @@ int partition(List<num> numbers, {required int low, required int high}) {
   int index = low - 1;
 
   for (int i = low; i < high; ++i) {
-    if (numbers[i] < pivot) {
+    if (numbers[i] <= pivot) {
       index++;
       final temp = numbers[i];
       numbers[i] = numbers[index];
@@ -32,3 +32,5 @@ int partition(List<num> numbers, {required int low, required int high}) {
 void quickSort(List<num> numbers) {
   _quickSort(numbers, low: 0, high: numbers.length - 1);
 }
+
+
