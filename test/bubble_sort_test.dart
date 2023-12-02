@@ -8,7 +8,7 @@ void main() {
     numbers = [32, 98, 21, 43, 65, 76, 54, 87, 109];
   });
 
-  group('Bubble Sort', () {
+  group('Bubble Sort -', () {
     test('Sort Elements of a list', () {
       //Arrange
       const sortedArray = [21, 32, 43, 54, 65, 76, 87, 98, 109];

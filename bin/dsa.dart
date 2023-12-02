@@ -1,27 +1,11 @@
-import 'dart:math';
-import 'package:dsa/maze_solver.dart' as dsa;
+import 'package:dsa/quick_sort.dart' as dsa;
 
 void main() {
-  // Define the maze
-  List<String> maze = [
-    '##########',
-    '         #',
-    '#   ##   #',
-    '#   ##   #',
-    '#         ',
-    '##########',
-  ];
 
-  Point<int> start = Point(0, 1);
-  Point<int> end = Point(9, 4);
+  List<int> arr = [7, 2, 1, 6, 8, 5, 3, 4];
+  print('Original Array: $arr');
 
-  String wall = '#';
+  dsa.quickSort(arr);
 
-  List<Point<int>> solutionPath = dsa.solveMaze(
-    maze: maze,
-    wall: wall,
-    start: start,
-    end: end,
-  );
-  print(solutionPath);
+  print('Sorted Array: $arr');
 }
