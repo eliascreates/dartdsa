@@ -2,6 +2,11 @@
 
 <img src="dsa.png" width="100%">
 
+[![Build Status](https://github.com/eliascreates/dartdsa/workflows/Dart/badge.svg)](https://github.com/eliascreates/dartdsa/actions)
+[![Code Coverage](https://codecov.io/gh/eliascreates/dartdsa/branch/main/graph/badge.svg)](https://codecov.io/gh/eliascreates/dartdsa)
+![Dart SDK Version](https://img.shields.io/badge/dart-%3E%3D3.1.5-blue.svg)
+[![License](https://img.shields.io/github/license/eliascreates/dartdsa)](LICENSE.md)
+
 A repository for practicing data structures and algorithms in Dart.
 
 ## Overview
