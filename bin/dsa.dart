@@ -1,11 +1,23 @@
-import 'package:dsa/quick_sort.dart' as dsa;
+import 'package:dsa/doubly_linked_list.dart' as dsa;
 
 void main() {
+  final doublyLinkedList = dsa.DoublyLinkedList<int>();
 
-  List<int> arr = [7, 2, 1, 6, 8, 5, 3, 4];
-  print('Original Array: $arr');
+  doublyLinkedList
+    ..append(20)
+    ..append(40)
+    ..append(60)
+    ..append(80)
+    ..append(100);
 
-  dsa.quickSort(arr);
+  print('Original List: $doublyLinkedList');
+  print('Original List Length: ${doublyLinkedList.length}');
 
-  print('Sorted Array: $arr');
+  doublyLinkedList.prepend(10);
+  doublyLinkedList.insertAt(2, item: 30);
+  doublyLinkedList.get(2);
+  doublyLinkedList.removeAt(doublyLinkedList.length - 1);
+
+  print('Modified List: $doublyLinkedList');
+  print('Modified Length List: ${doublyLinkedList.length}');
 }
