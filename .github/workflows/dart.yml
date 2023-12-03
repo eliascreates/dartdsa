@@ -2,9 +2,9 @@ name: Dart
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -16,7 +16,6 @@ jobs:
       # Note: This workflow uses the latest stable version of the Dart SDK.
       # You can specify other versions if desired, see documentation here:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
-      # - uses: dart-lang/setup-dart@v1
       - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
 
       - name: Install dependencies
@@ -30,9 +29,11 @@ jobs:
       - name: Analyze Code
         run: dart analyze
 
-      - name: Run tests
-        run: dart test
-        
+      - name: Run tests with coverage
+        run: |
+          dart test --coverage=coverage
+          dart run coverage:format_coverage --lcov -o coverage/lcov.info
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:
