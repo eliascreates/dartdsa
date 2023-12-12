@@ -37,7 +37,20 @@ class Queue<T> {
   bool _queueIsNotEmpty() => _head != null;
 
   @override
-  String toString() => 'Queue(length: $_length, headNotEmpty: ${_queueIsNotEmpty()}, tailNotEmpty: ${_tail != null})';
+  String toString() {
+    Node<T>? currentNode = _head;
+    List<T?> output = [];
+
+    for (int i = 0; i < _length; i++) {
+      output.add(currentNode?.value);
+      currentNode = currentNode?.nextNode;
+    }
+
+    return '$output';
+  }
+
+  // @override
+  // String toString() => 'Queue(length: $_length, headNotEmpty: ${_queueIsNotEmpty()}, tailNotEmpty: ${_tail != null})';
 }
 
 class Node<T> {
