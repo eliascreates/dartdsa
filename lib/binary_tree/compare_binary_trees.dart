@@ -1,7 +1,6 @@
 import 'binary_node.dart';
 
 bool compare(BinaryNode<num>? a, BinaryNode<num>? b) {
-  
   if (a == null && b == null) {
     return true;
   }
@@ -15,5 +14,4 @@ bool compare(BinaryNode<num>? a, BinaryNode<num>? b) {
   }
 
   return compare(a.left, b.left) && compare(a.right, b.right);
-
 }
