@@ -1,23 +1,25 @@
-import 'package:dsa/doubly_linked_list.dart' as dsa;
+import 'package:dsa/binary_tree/binary_node.dart';
+import 'package:dsa/binary_tree/binary_tree.dart' as dsa;
 
 void main() {
-  final doublyLinkedList = dsa.DoublyLinkedList<int>();
+  final binaryTreeA = dsa.BinaryTree<num>();
 
-  doublyLinkedList
-    ..append(20)
-    ..append(40)
-    ..append(60)
-    ..append(80)
-    ..append(100);
+  final binaryTreeB = dsa.BinaryTree<num>();
 
-  print('Original List: $doublyLinkedList');
-  print('Original List Length: ${doublyLinkedList.length}');
+  binaryTreeA.root = BinaryNode<num>(value: 1);
+  binaryTreeA.root?.left = BinaryNode<num>(value: 2);
+  binaryTreeA.root?.right = BinaryNode<num>(value: 3);
+  binaryTreeA.root?.right?.left = BinaryNode<num>(value: 4);
 
-  doublyLinkedList.prepend(10);
-  doublyLinkedList.insertAt(2, item: 30);
-  doublyLinkedList.get(2);
-  doublyLinkedList.removeAt(doublyLinkedList.length - 1);
+  binaryTreeB.root = BinaryNode<num>(value: 1);
+  binaryTreeB.root?.left = BinaryNode<num>(value: 2);
+  binaryTreeB.root?.right = BinaryNode<num>(value: 3);
+  binaryTreeB.root?.left?.left = BinaryNode<num>(value: 4);
 
-  print('Modified List: $doublyLinkedList');
-  print('Modified Length List: ${doublyLinkedList.length}');
+  print('Binary Tree A: $binaryTreeA');
+  print('Binary Tree B: $binaryTreeB');
+
+  final same = dsa.compare(binaryTreeA.root, binaryTreeB.root);
+
+  print(same ? 'Tree A & B are equal' : 'Tree A & B are not equal');
 }
