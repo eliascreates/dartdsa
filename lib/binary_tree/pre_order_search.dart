@@ -1,6 +1,6 @@
 import 'binary_node.dart';
 
-List<num> _walk(BinaryNode<num>? currentNode, List<num> path) {
+List<T> _walk<T>(BinaryNode<T>? currentNode, List<T> path) {
   if (currentNode == null) {
     return path;
   }
@@ -12,6 +12,7 @@ List<num> _walk(BinaryNode<num>? currentNode, List<num> path) {
   return path;
 }
 
-List<num> preOrderSearch({required BinaryNode<num> binaryNode}) {
+List<T> preOrderSearch<T>({required BinaryNode<T>? binaryNode}) {
+  if (binaryNode == null) return [];
   return _walk(binaryNode, []);
 }

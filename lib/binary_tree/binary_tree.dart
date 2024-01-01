@@ -19,7 +19,7 @@ class BinaryTree<T> {
 
   @override
   String toString() {
-    final path = preOrderSearch(binaryNode: root as BinaryNode<num>);
+    final path = preOrderSearch(binaryNode: root);
     return '$path';
   }
 }

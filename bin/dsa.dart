@@ -14,7 +14,7 @@ void main() {
   binaryTreeB.root = BinaryNode<num>(value: 1);
   binaryTreeB.root?.left = BinaryNode<num>(value: 2);
   binaryTreeB.root?.right = BinaryNode<num>(value: 3);
-  binaryTreeB.root?.left?.left = BinaryNode<num>(value: 4);
+  binaryTreeB.root?.right?.left = BinaryNode<num>(value: 4);
 
   print('Binary Tree A: $binaryTreeA');
   print('Binary Tree B: $binaryTreeB');
