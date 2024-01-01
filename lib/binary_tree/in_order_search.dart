@@ -12,6 +12,7 @@ List<num> _walk(BinaryNode<num>? currentNode, List<num> path) {
   return path;
 }
 
-List<num> inOrderSearch({required BinaryNode<num> binaryNode}) {
+List<num> inOrderSearch({required BinaryNode<num>? binaryNode}) {
+  if (binaryNode == null) return [];
   return _walk(binaryNode, []);
 }
