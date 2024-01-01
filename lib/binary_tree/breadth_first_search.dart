@@ -2,9 +2,11 @@ import 'package:dsa/binary_tree/binary_node.dart';
 import 'package:dsa/queue.dart';
 
 bool breadthFirstSearch({
-  required BinaryNode<num> head,
+  required BinaryNode<num>? head,
   required num needle,
 }) {
+  if (head == null) return false;
+
   final q = Queue<BinaryNode<num>?>();
   q.enqueue(item: head);
   while (q.length > 0) {
