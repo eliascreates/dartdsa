@@ -3,49 +3,54 @@ import 'package:dsa/binary_tree/binary_tree.dart';
 
 void main() {
   late BinaryTree<num> binaryTree;
-  setUpAll(() {
-    binaryTree = BinaryTree<num>();
 
-    binaryTree.root = binaryTree.createNode(65);
-    binaryTree.root?.left = binaryTree.createNode(32);
-    binaryTree.root?.right = binaryTree.createNode(98);
-    binaryTree.root?.left?.left = binaryTree.createNode(21);
-    binaryTree.root?.left?.right = binaryTree.createNode(54);
-    binaryTree.root?.right?.left = binaryTree.createNode(76);
-    binaryTree.root?.right?.right = binaryTree.createNode(109);
-    binaryTree.root?.left?.right?.left = binaryTree.createNode(43);
-    binaryTree.root?.right?.left?.right = binaryTree.createNode(87);
-  });
-  test('Breadth-First Search - Return true if value is found', () {
-    // Arrange
-    const searchNum = 76;
+  group('Breadth-First Search - ', () {
+    setUpAll(() {
+      binaryTree = BinaryTree<num>();
 
-    // Act
-    final result = breadthFirstSearch(head: binaryTree.root, needle: searchNum);
+      binaryTree.root = binaryTree.createNode(65);
+      binaryTree.root?.left = binaryTree.createNode(32);
+      binaryTree.root?.right = binaryTree.createNode(98);
+      binaryTree.root?.left?.left = binaryTree.createNode(21);
+      binaryTree.root?.left?.right = binaryTree.createNode(54);
+      binaryTree.root?.right?.left = binaryTree.createNode(76);
+      binaryTree.root?.right?.right = binaryTree.createNode(109);
+      binaryTree.root?.left?.right?.left = binaryTree.createNode(43);
+      binaryTree.root?.right?.left?.right = binaryTree.createNode(87);
+    });
+    test('Return true if value is found', () {
+      // Arrange
+      const searchNum = 76;
 
-    // Assert
-    expect(result, isTrue);
-  });
+      // Act
+      final result =
+          breadthFirstSearch(head: binaryTree.root, needle: searchNum);
 
-  test('Breadth-First Search - Return false if value is not found', () {
-    // Arrange
-    const searchNum = 120;
+      // Assert
+      expect(result, isTrue);
+    });
 
-    // Act
-    final result = breadthFirstSearch(head: binaryTree.root, needle: searchNum);
+    test('Return false if value is not found', () {
+      // Arrange
+      const searchNum = 120;
 
-    // Assert
-    expect(result, isFalse);
-  });
+      // Act
+      final result =
+          breadthFirstSearch(head: binaryTree.root, needle: searchNum);
 
-  test('Breadth-First Search - Return false for an empty tree', () {
-    // Arrange
-    BinaryTree<num> binaryTree = BinaryTree();
+      // Assert
+      expect(result, isFalse);
+    });
 
-    // Act
-    final result = breadthFirstSearch(head: binaryTree.root, needle: 42);
+    test('Return false for an empty tree', () {
+      // Arrange
+      BinaryTree<num> binaryTree = BinaryTree();
 
-    // Assert
-    expect(result, isFalse);
+      // Act
+      final result = breadthFirstSearch(head: binaryTree.root, needle: 42);
+
+      // Assert
+      expect(result, isFalse);
+    });
   });
 }

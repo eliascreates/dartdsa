@@ -5,7 +5,7 @@ void main() {
   late BinaryTree<num> binaryTreeA;
   late BinaryTree<num> binaryTreeB;
 
-  group('Binary Tree compare function', () {
+  group('Binary Tree Compare - ', () {
     setUpAll(() {
       binaryTreeA = BinaryTree();
       binaryTreeA.root = binaryTreeA.createNode(65);
@@ -30,7 +30,7 @@ void main() {
       binaryTreeB.root?.right?.left?.right = binaryTreeB.createNode(87);
     });
 
-    test('Compare - Return true for two identical trees', () {
+    test('Return true for two identical trees', () {
       // Act
       final result = compare(binaryTreeA.root, binaryTreeB.root);
 
@@ -38,7 +38,7 @@ void main() {
       expect(result, isTrue);
     });
 
-    test('Compare - Return false for two different trees', () {
+    test('Return false for two different trees', () {
       // Arrange
       binaryTreeB.root?.right?.right = binaryTreeB.createNode(110);
 
@@ -49,7 +49,7 @@ void main() {
       expect(result, isFalse);
     });
 
-    test('Compare - Return false for trees with different structures', () {
+    test('Return false for trees with different structures', () {
       // Arrange
       BinaryTree<num> treeA = BinaryTree();
       treeA.root = treeA.createNode(65);
@@ -72,7 +72,7 @@ void main() {
       expect(result, isFalse);
     });
 
-    test('Compare - Return true for two empty trees', () {
+    test('Return true for two empty trees', () {
       // Arrange
       BinaryTree<num> treeA = BinaryTree();
       BinaryTree<num> treeB = BinaryTree();
