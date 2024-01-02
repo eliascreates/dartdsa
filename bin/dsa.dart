@@ -1,10 +1,9 @@
-import 'package:dsa/binary_tree/binary_node.dart';
-import 'package:dsa/binary_tree/binary_tree.dart' as dsa;
+import 'package:dsa/binary_tree/binary_tree.dart';
 
 void main() {
-  final binaryTreeA = dsa.BinaryTree<num>();
+  final binaryTreeA = BinaryTree<num>();
 
-  final binaryTreeB = dsa.BinaryTree<num>();
+  final binaryTreeB = BinaryTree<num>();
 
   binaryTreeA.root = BinaryNode<num>(value: 1);
   binaryTreeA.root?.left = BinaryNode<num>(value: 2);
@@ -19,7 +18,7 @@ void main() {
   print('Binary Tree A: $binaryTreeA');
   print('Binary Tree B: $binaryTreeB');
 
-  final same = dsa.compare(binaryTreeA.root, binaryTreeB.root);
+  final same = compare(binaryTreeA.root, binaryTreeB.root);
 
   print(same ? 'Tree A & B are equal' : 'Tree A & B are not equal');
 }
