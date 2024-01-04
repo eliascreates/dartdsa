@@ -1,6 +1,6 @@
 # Dart Data Structures 🧪 and Algorithms 🧠
 
-<img src="dsa.png" width="100%">
+<img src="dsa.png" width="95%">
 
 [![Build Status](https://github.com/eliascreates/dartdsa/workflows/Dart/badge.svg)](https://github.com/eliascreates/dartdsa/actions)
 [![codecov](https://codecov.io/gh/eliascreates/dartdsa/graph/badge.svg?token=7UUGL02F7H)](https://codecov.io/gh/eliascreates/dartdsa)
