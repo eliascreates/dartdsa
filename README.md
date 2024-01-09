@@ -21,7 +21,7 @@ Feel free to explore the codebase for examples and exercises related to data str
 
 ## Contributing
 
-Contributions are not expected for this personal practice repository.
+Contributions are not expected for this personal practice repository
 
 ## License
 
